@@ -1,0 +1,138 @@
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.conteudo{
+    background: #f7f7f7;
+    /* background: #111; */
+    margin: 0px;
+    display: grid;
+    position: relative;
+    padding: 40px;
+    gap: 60px;
+    justify-content: center;
+}
+
+
+.logo{
+    grid-column: 1/-1;
+    margin-top: 10px;
+    place-self: start center;
+    display: block;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a{
+    color: #111;
+    background: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase; /*Deixa a palavra maiuscula*/
+}
+
+.info{
+    display: grid;
+    margin: 0px 100px;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 1000px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.detalhes{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    place-content: center right;
+    text-align: right;
+    padding: 40px;
+    gap: 30px;
+}
+
+.detalhes h2{
+    font-size: 32px;
+    margin: 0px;
+}
+
+.detalhes p{
+    font-size: 20px;
+}
+
+.botao{
+    text-decoration: none;
+    place-self: start end;
+    background-color: #e21;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 4px;
+}
+
+.detalhes, .vantagens{
+    background: #fff;
+}
+
+.txtvantagens{
+    color: rgba(0,0,0,0.2);
+    text-align: right;
+    font-size: 65px;
+    align-self: center;
+    padding: 30px;
+}
+
+.vantagens{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-column: 2;
+    padding: 60px 30px;
+    margin: 0px;
+    gap: 10px;
+}
+
+.vantagens h3, p{
+    margin: 0px;
+}
+
+.vantagens p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.icons{
+    place-self: start end;
+    grid-column: 1;
+    grid-row: span 2;
+    padding: 0px 10px;
+}
+
+.faixa{
+    display: inline-block;
+    position: absolute;
+    justify-self: center;
+
+    background: #e21;
+    width: 60px;
+    height: 4px;
+    top: 30px;
+}
+
+.bottom{
+    font-family: Arial, Helvetica, sans-serif;
+    grid-column: 1/-1;
+    background: #fff;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+
+}
