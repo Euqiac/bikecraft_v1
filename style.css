@@ -1,6 +1,17 @@
+:root {
+  --fundo1: #f7f7f7;
+  --fundo2: white;
+  --cor1: #e21;
+  --texto2: #111;
+  --texto1: #fff;
+  --cor2: #900;
+  --texto3: rgba(0, 0, 0, 0.2);
+}
+
 body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fundo1);
 }
 
 h1,
@@ -11,35 +22,36 @@ p {
 }
 
 .conteudo {
-  background: #f7f7f7;
-  /* margin: 0px; */
+  background: var(--fundo1);
   display: grid;
   justify-content: center;
-  padding: 40px 0px;
-  gap: 60px 0px;
+  padding: 40px;
+  gap: 60px;
 }
 
 .cabecalho {
   display: grid;
-  gap: 60px 0px;
+  gap: 60px;
   justify-items: center;
   margin-top: 10px;
 }
 
 .menu {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .menu-itens {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
 }
 
 .menu-itens a {
-  color: #111;
-  background: white;
+  display: block;
+  color: var(--texto2);
+  background: var(--fundo2);
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 4px;
@@ -48,17 +60,20 @@ p {
 }
 
 .menu-itens a:hover {
-  border: 2px solid #e21;
+  border: 2px solid var(--cor1);
 }
 
 .info {
   display: grid;
-  padding: 0px 100px;
+  margin: 0px auto;
   max-width: 1000px;
 }
 
 img {
   max-width: 100%;
+  align-self: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .apresentacao {
@@ -66,16 +81,11 @@ img {
   grid-template-columns: 1fr 1fr;
 }
 
-.apresentacao img {
-  height: 100%;
-  object-fit: cover;
-}
-
 .detalhes::after {
   content: "";
   width: 60px;
   height: 4px;
-  background: #e21;
+  background: var(--cor1);
   position: absolute;
   right: -30px;
   top: 30px;
@@ -86,7 +96,7 @@ img {
   display: grid;
   text-align: right;
   padding: 40px;
-  min-width: 30ch;
+  color: var(--texto2);
 }
 
 .detalhes h1 {
@@ -102,8 +112,8 @@ img {
 
 .botao {
   text-decoration: none;
-  background-color: #e21;
-  color: #fff;
+  background-color: var(--cor1);
+  color: var(--texto1);
   place-self: start end;
   padding: 15px 30px;
   border-radius: 4px;
@@ -111,45 +121,43 @@ img {
 }
 
 .botao:hover {
-  background-color: #900;
+  background-color: var(--cor2);
 }
 
 .detalhes,
 .vantagens-list {
-  background: #fff;
+  background: var(--fundo2);
 }
 
 .txtvantagens {
   display: grid;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--texto3);
   background-image: url(/img/onda.svg);
   text-align: right;
   align-content: center;
   font-size: 3rem;
   padding: 1.5rem;
-  word-break: break-all;
-  min-width: 10ch;
 }
 
 .vantagens-list {
   padding: 40px;
+  color: var(--texto2);
 }
 
 .vantagens-itens:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo1);
 }
 
 .vantagens-itens {
   display: grid;
+  grid-template-columns: 20px 1fr;
   align-items: left;
   gap: 10px 20px;
   padding: 15px;
-  border-left: 4px solid transparent;
-  min-width: 20ch;
 }
 
 .vantagens-itens:hover {
-  border-color: #e21;
+  border-left: 4px solid var(--cor1);
 }
 
 .vantagens-itens p {
@@ -165,31 +173,16 @@ img {
 .bottom {
   font-family: Arial, Helvetica, sans-serif;
   grid-column: 1/-1;
-  background: #fff;
+  background: var(--fundo2);
   text-align: center;
   font-size: 1.3rem;
   padding: 30px;
+  color: var(--texto2);
 }
 
-@media (max-width: 800px) {
-  .conteudo {
-    gap: 10px;
-    min-width: 300px;
-  }
-
-  .cabecalho {
-    gap: 10px 0px;
-  }
-
-  .menu-itens {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .menu-itens a {
-    display: block;
+@media (max-width: 900px) {
+  .info {
+    margin: 0px;
   }
 
   .apresentacao {
@@ -197,23 +190,71 @@ img {
   }
 
   .detalhes {
-    gap: 10px;
+    text-align: left;
+    gap: 20px;
   }
+
+  .detalhes h1 {
+    place-self: start;
+  }
+
+  .detalhes p {
+    line-height: 1.5;
+  }
+
+  .detalhes a {
+    place-self: start;
+  }
+
   .detalhes::after {
     display: none;
   }
 
+  img {
+    object-position: top left;
+    /* justify-self: center; */
+  }
+
   .txtvantagens {
-    padding: 60px 0px;
-  }
-
-  .txtvantagens h2 {
-    font-size: 3rem;
-    word-break: normal;
+    word-wrap: break-word;
+    font-size: 1.7rem;
     text-align: center;
+    padding: 50px 0px;
   }
 
-  .info {
-    padding: 0px 30px;
+  .vantagens-itens {
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+
+  .vantagens-itens img {
+    justify-self: right;
+  }
+
+  .vantagens-list {
+    padding: 20px 10px;
+  }
+
+  .bottom {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo1: #111;
+    --fundo2: #000;
+    --cor1: #e21;
+    --texto2: #fff;
+    --texto3: rgba(255, 255, 255, 0.2);
+    --cor2: #900;
+  }
+
+  .logo {
+    color: #fff;
+  }
+
+  .txtvantagens {
+    background-image: url(/img/onda-escura.svg);
   }
 }
